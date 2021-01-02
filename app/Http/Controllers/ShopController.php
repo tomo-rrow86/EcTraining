@@ -22,8 +22,8 @@ class ShopController extends Controller
 
     public function cart_put(Request $request)
     {
-        $cart_item = $request->stock_id;
-        $request->session()->put('cart_item' , $cart_item);
-        return redirect('mycart');
+        $user_id = Auth::id();
+        $request->session()->push('cart_item' , $request->input('stock_id'));
+        return redirect('mycart')->with('user_id' , $user_id);
     }
 }
