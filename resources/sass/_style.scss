@@ -43,3 +43,33 @@ img.cart{
   .pagenate{
     width: 200px;margin: 20px auto;
   }
+
+  /* WebKit ブラウザで、input type="number" のスピンボタンを非表示にする。 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox で、input type="number" のスピンボタンを非表示にする。また、入力欄の値表示を中央寄せにし、高さをボタンのサイズに合わせる。 */
+input[type="number"] {
+  -moz-appearance: textfield;
+  text-align: center;
+  height: 44px;
+}
+
+/*ボタンのサイズを 44 × 44 CSS ピクセルにする。*/
+button.btn-number {
+  width: 44px;
+  height: 44px;
+}
+
+/* ステッパーコンポーネントの横幅を指定する。 */
+div.input-group {
+  width: 160px;
+}
+
+
+
+Resources

@@ -10,6 +10,7 @@
                     {{session('user_id')}}
                     @foreach($session_cart as $value)
                         {{$value}} <br>
+                        {{$value}} <br>
                     @endforeach
 
                     @php
