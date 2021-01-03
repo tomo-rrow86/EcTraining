@@ -16,7 +16,14 @@
                     @php
                     var_dump($session_cart);
                     @endphp
-                </div>          
+                </div>
+                <div class="in_cart_area">
+                <form action="{{ route('cart.destroy') }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <input type="submit" value="カートを空にする">
+                    </form>
+                </div>                
             </div>
         </div>
     </div>

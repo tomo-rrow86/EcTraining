@@ -27,4 +27,10 @@ class ShopController extends Controller
         $request->session()->push('cart_item' , ['stock_id' => $request->input('stock_id') , 'quantity' => $request->input('quantity')]);
         return redirect('mycart')->with('user_id' , $user_id );
     }
+
+    public function destroy()
+    {
+        session()->forget('cart_item');
+        return redirect('/');
+    }
 }
