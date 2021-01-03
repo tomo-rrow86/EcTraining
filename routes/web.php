@@ -19,3 +19,5 @@ Route::post('/mycart' , 'ShopController@cart_put')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::delete('/mycart', 'ShopController@destroy')->name('cart.destroy')->middleware('auth');

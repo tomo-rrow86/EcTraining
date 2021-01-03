@@ -9,14 +9,14 @@
                 <div class="d-flex flex-row flex-wrap">
                     {{session('user_id')}}
                     @foreach($session_cart as $value)
-                        {{$value}} <br>
-                        {{$value}} <br>
+                        {{$value['stock_id']}} <br>
+                        {{$value['quantity']}} <br>
                     @endforeach
 
                     @php
                     var_dump($session_cart);
                     @endphp
-                </div>
+                </div>          
             </div>
         </div>
     </div>

@@ -18,12 +18,13 @@ class ShopController extends Controller
     public function myCart(Request $request)
     {
         $sesdata = $request->session()->get('cart_item');
-        return view('mycart' , ['session_cart' => $sesdata]);    }
+        return view('mycart' , ['session_cart' => $sesdata]);
+    }
 
     public function cart_put(Request $request)
     {
         $user_id = Auth::id();
-        $request->session()->push('cart_item' , $request->input('stock_id') , $request->input('quantity'));
+        $request->session()->push('cart_item' , ['stock_id' => $request->input('stock_id') , 'quantity' => $request->input('quantity')]);
         return redirect('mycart')->with('user_id' , $user_id );
     }
 }
