@@ -17,8 +17,13 @@ class ShopController extends Controller
 
     public function myCart(Request $request)
     {
-        $sesdata = $request->session()->get('cart_item');
-        return view('mycart' , ['session_cart' => $sesdata]);
+        if (session()->exists('cart_item')) {
+            $sesdata = $request->session()->get('cart_item');
+            return view('mycart' , ['session_cart' => $sesdata]);
+        } else {
+            return redirect('/');
+        }
+
     }
 
     public function cart_put(Request $request)
